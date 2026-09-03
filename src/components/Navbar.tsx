@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { href: "#onososon", label: "O Noso Son" },
   { href: "#musica", label: "Música" },
+  { href: "#xira", label: "Concertos" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
 
