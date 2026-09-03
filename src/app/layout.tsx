@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tapa d'Orella | Montando a Festa",
+  title: "Tapa d'Orella",
   description: "Dous colegas facendo música para gozar, bailar e pasalo ben. Mezcla explosiva de música urbana, ska, reggae e verbena 2.0.",
   openGraph: {
-    title: "Tapa d'Orella | Montando a Festa",
+    title: "Tapa d'Orella",
     description: "Unha das propostas musicais máis irreverentes e festivas da actualidade. Non vimos só a tocar, vimos a montar a festa.",
     siteName: "Tapa d'Orella",
     locale: "gl_ES",
