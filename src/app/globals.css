@@ -2,6 +2,8 @@
 
 @theme {
   --color-brand-blue: #0077c8;
+  --color-brand-blue-light: #208bea;
+  --font-display: var(--font-bebas);
 }
 
 @layer base {
