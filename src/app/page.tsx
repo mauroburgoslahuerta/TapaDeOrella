@@ -291,7 +291,6 @@ export default function Home() {
       </section>
 
       {/* ── Xira (Concert Dates Image) ───────────────────────── */}
-      {/* 
       <section
         id="xira"
         className="py-24 bg-neutral-950 border-t border-white/5"
@@ -308,11 +307,10 @@ export default function Home() {
             </h2>
           </AnimatedSection>
 
-          // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          //  Para engadir a imaxe de concertos:
-          //  1. Garda a imaxe como  public/xira.png
-          //  2. Descomenta todo este bloque <section id="xira">
-          // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
           
           <AnimatedSection
             initial={{ opacity: 0, y: 20 }}
@@ -323,7 +321,7 @@ export default function Home() {
           >
             <div className="relative w-full max-w-2xl">
               <Image
-                src="/xira.png"
+                src="/xira.jpg"
                 alt="Datas de concertos de Tapa D'Orella"
                 width={720}
                 height={1280}
@@ -333,7 +331,7 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-      */}
+      
 
       {/* ── Social Banner (Mobile Only - Bottom) ────────────── */}
       <SocialBanner className="md:hidden border-t border-white/10 shadow-2xl relative z-20" />
