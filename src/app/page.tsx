@@ -48,7 +48,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex flex-col overflow-hidden">
+      <section className="relative min-h-screen w-full flex flex-col overflow-hidden">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -61,18 +61,18 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 flex-1 pt-8 pb-16 flex flex-col justify-between items-center text-center">
+        <div className="relative z-10 container mx-auto px-6 flex-1 pt-32 pb-12 flex flex-col justify-center items-center text-center gap-8 md:gap-12">
           
           {/* Bloque Superior (Letrero + Título) */}
-          <div className="flex flex-col items-center mt-0">
+          <div className="flex flex-col items-center">
             <motion.div
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-2 inline-flex items-center gap-2 px-6 py-3 border-4 border-[#0077c8] bg-[#0077c8]/10 backdrop-blur-md"
+              className="mb-4 inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 md:border-4 border-[#0077c8] bg-[#0077c8]/10 backdrop-blur-md"
             >
-              <MapPin className="w-6 h-6 text-[#0077c8]" />
-              <span className="font-mono text-lg font-black tracking-widest uppercase text-white drop-shadow-md">
+              <MapPin className="w-4 h-4 md:w-6 md:h-6 text-[#0077c8]" />
+              <span className="font-mono text-sm md:text-lg font-black tracking-widest uppercase text-white drop-shadow-md">
                 Verín - As Neves
               </span>
             </motion.div>
@@ -81,21 +81,21 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none"
+              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none"
             >
-              Tapa <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0077c8] to-blue-300">D'Orella</span>
+              Tapa <br className="sm:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0077c8] to-blue-300">D'Orella</span>
             </motion.h1>
           </div>
 
           {/* Bloque Inferior (Párrafo + CTAs) */}
-          <div className="flex flex-col items-center pb-10 md:pb-16">
+          <div className="flex flex-col items-center">
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-2xl text-neutral-200 max-w-4xl font-medium mb-8 drop-shadow-xl"
+              className="text-lg md:text-2xl text-neutral-200 max-w-4xl font-medium mb-8 drop-shadow-xl px-4"
             >
-              Unha das propostas musicais máis irreverentes e festivas da actualidade. <br />
+              Unha das propostas musicais máis irreverentes e festivas da actualidade. <br className="hidden md:block" />
               Non vimos só a tocar, vimos a montar a festa.
             </motion.p>
 
@@ -103,13 +103,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4"
             >
-              <a href="#musica" className="px-8 py-4 bg-[#0077c8] hover:bg-blue-600 text-white font-black uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,119,200,0.5)]">
+              <a href="#musica" className="w-full sm:w-auto px-8 py-4 bg-[#0077c8] hover:bg-blue-600 text-white font-black uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,119,200,0.5)]">
                 <Play className="w-6 h-6 fill-current" />
                 Escoitar Agora
               </a>
-              <a href="#contacto" className="px-8 py-4 bg-white hover:bg-neutral-200 text-black font-black uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:scale-105">
+              <a href="#contacto" className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-neutral-200 text-black font-black uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:scale-105">
                 <Calendar className="w-6 h-6" />
                 Contratación
               </a>
@@ -117,12 +117,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Redes Banner Incrustado (Opción B) */}
-        <div className="absolute bottom-0 w-full z-30 bg-[#0077c8] py-4 border-t border-white/10 shadow-2xl">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-wrap justify-center items-center gap-x-8 md:gap-x-12 gap-y-4">
+        {/* Redes Banner Incrustado (Flujo normal, no absolute) */}
+        <div className="relative mt-auto w-full z-30 bg-[#0077c8] py-4 border-t border-white/10 shadow-2xl">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-x-12">
               
-              <div className="flex items-center gap-4 md:gap-6">
+              <div className="flex items-center gap-6">
                 <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">O Grupo:</span>
                 <a href="https://www.instagram.com/tapadorella/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
                   <InstagramIcon className="w-6 h-6 md:w-5 md:h-5" /> <span className="font-mono text-xs uppercase font-bold tracking-widest lg:hidden">@tapadorella</span>
@@ -137,20 +137,22 @@ export default function Home() {
               
               <div className="hidden lg:block w-px h-6 bg-white/30"></div>
               
-              <div className="flex items-center gap-2 md:gap-4">
-                <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Pappaquino:</span>
-                <a href="https://www.instagram.com/pappaquino/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                  <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@pappaquino</span>
-                </a>
-              </div>
+              <div className="flex items-center gap-6 md:gap-4 w-full md:w-auto justify-center">
+                <div className="flex items-center gap-2">
+                  <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Pappaquino:</span>
+                  <a href="https://www.instagram.com/pappaquino/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                    <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@pappaquino</span>
+                  </a>
+                </div>
 
-              <div className="hidden md:block w-px h-6 bg-white/30"></div>
+                <div className="w-px h-4 bg-white/30 md:hidden"></div>
 
-              <div className="flex items-center gap-2 md:gap-4">
-                <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Willow GHZ:</span>
-                <a href="https://www.instagram.com/willow_ghz/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                  <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@willow_ghz</span>
-                </a>
+                <div className="flex items-center gap-2">
+                  <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Willow GHZ:</span>
+                  <a href="https://www.instagram.com/willow_ghz/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                    <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@willow_ghz</span>
+                  </a>
+                </div>
               </div>
 
             </div>
