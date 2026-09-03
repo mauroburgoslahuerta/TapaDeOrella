@@ -21,7 +21,7 @@ export default function Home() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
         </div>
 
