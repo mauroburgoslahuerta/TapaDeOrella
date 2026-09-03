@@ -48,30 +48,37 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex flex-col overflow-hidden">
+      <section className="relative min-h-[100svh] md:h-screen w-full flex flex-col overflow-hidden bg-neutral-950">
+        
+        {/* Desktop Background (Full Screen Immersive) */}
         <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/hero-bg.jpeg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="absolute inset-0 z-0 hidden md:block bg-[url('/hero-bg.jpeg')] bg-cover bg-center"
         >
           <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 flex-1 pt-32 pb-12 flex flex-col justify-center items-center text-center gap-8 md:gap-12">
+        {/* Mobile Background (Banner at the top) */}
+        <div className="absolute top-0 left-0 w-full z-0 block md:hidden">
+          <img 
+            src="/hero-bg.jpeg" 
+            alt="Tapa D'Orella en directo" 
+            className="w-full h-auto object-contain opacity-90 mt-16" 
+          />
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-950 to-transparent" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 flex-1 pt-[38vh] sm:pt-[45vh] md:pt-8 pb-16 md:pb-16 flex flex-col justify-between items-center text-center">
           
           {/* Bloque Superior (Letrero + Título) */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mt-0">
             <motion.div
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-4 inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 border-2 md:border-4 border-[#0077c8] bg-[#0077c8]/10 backdrop-blur-md"
+              className="mb-4 inline-flex items-center gap-2 px-6 py-3 border-4 border-[#0077c8] bg-[#0077c8]/10 backdrop-blur-md"
             >
-              <MapPin className="w-4 h-4 md:w-6 md:h-6 text-[#0077c8]" />
+              <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#0077c8]" />
               <span className="font-mono text-sm md:text-lg font-black tracking-widest uppercase text-white drop-shadow-md">
                 Verín - As Neves
               </span>
@@ -83,7 +90,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none"
             >
-              Tapa <br className="sm:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0077c8] to-blue-300">D'Orella</span>
+              Tapa <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0077c8] to-blue-300">D'Orella</span>
             </motion.h1>
           </div>
 
@@ -93,7 +100,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-2xl text-neutral-200 max-w-4xl font-medium mb-8 drop-shadow-xl px-4"
+              className="text-lg md:text-2xl text-neutral-200 max-w-4xl font-medium mb-8 drop-shadow-xl"
             >
               Unha das propostas musicais máis irreverentes e festivas da actualidade. <br className="hidden md:block" />
               Non vimos só a tocar, vimos a montar a festa.
@@ -103,7 +110,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
               <a href="#musica" className="w-full sm:w-auto px-8 py-4 bg-[#0077c8] hover:bg-blue-600 text-white font-black uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,119,200,0.5)]">
                 <Play className="w-6 h-6 fill-current" />
@@ -114,48 +121,6 @@ export default function Home() {
                 Contratación
               </a>
             </motion.div>
-          </div>
-        </div>
-
-        {/* Redes Banner Incrustado (Flujo normal, no absolute) */}
-        <div className="relative mt-auto w-full z-30 bg-[#0077c8] py-4 border-t border-white/10 shadow-2xl">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-x-12">
-              
-              <div className="flex items-center gap-6">
-                <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">O Grupo:</span>
-                <a href="https://www.instagram.com/tapadorella/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                  <InstagramIcon className="w-6 h-6 md:w-5 md:h-5" /> <span className="font-mono text-xs uppercase font-bold tracking-widest lg:hidden">@tapadorella</span>
-                </a>
-                <a href="https://www.youtube.com/@TapaDOrella" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                  <YoutubeIcon className="w-6 h-6 md:w-5 md:h-5" />
-                </a>
-                <a href="https://open.spotify.com/intl-es/artist/5gnwOgI9I8nq2FGA0XAooJ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                  <SpotifyIcon className="w-6 h-6 md:w-5 md:h-5" />
-                </a>
-              </div>
-              
-              <div className="hidden lg:block w-px h-6 bg-white/30"></div>
-              
-              <div className="flex items-center gap-6 md:gap-4 w-full md:w-auto justify-center">
-                <div className="flex items-center gap-2">
-                  <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Pappaquino:</span>
-                  <a href="https://www.instagram.com/pappaquino/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                    <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@pappaquino</span>
-                  </a>
-                </div>
-
-                <div className="w-px h-4 bg-white/30 md:hidden"></div>
-
-                <div className="flex items-center gap-2">
-                  <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Willow GHZ:</span>
-                  <a href="https://www.instagram.com/willow_ghz/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
-                    <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@willow_ghz</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
       </section>
@@ -239,7 +204,7 @@ export default function Home() {
                 <span className="bg-[#0077c8] text-white text-xs font-bold uppercase tracking-widest px-2 py-1">Último Lanzamento</span>
               </div>
               <h3 className="text-3xl font-black uppercase tracking-tight mb-2">A mais mellor</h3>
-              <p className="text-neutral-400 mb-6 flex-grow">O noso traballo máis recente. Pura enerxía.</p>
+              <p className="text-neutral-400 mb-6 flex-grow">O noso traballo máis recente.</p>
               
               {/* Reproductor Spotify */}
               <iframe 
@@ -334,6 +299,45 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Redes Banner Separador */}
+      <div className="w-full bg-[#0077c8] py-8 border-t border-white/10 shadow-2xl relative z-20">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 md:gap-x-12 gap-y-6">
+            
+            <div className="flex items-center gap-4 md:gap-6">
+              <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">O Grupo:</span>
+              <a href="https://www.instagram.com/tapadorella/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                <InstagramIcon className="w-6 h-6 md:w-5 md:h-5" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@tapadorella</span>
+              </a>
+              <a href="https://www.youtube.com/@TapaDOrella" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                <YoutubeIcon className="w-6 h-6 md:w-5 md:h-5" />
+              </a>
+              <a href="https://open.spotify.com/intl-es/artist/5gnwOgI9I8nq2FGA0XAooJ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                <SpotifyIcon className="w-6 h-6 md:w-5 md:h-5" />
+              </a>
+            </div>
+            
+            <div className="hidden lg:block w-px h-6 bg-white/30"></div>
+            
+            <div className="flex items-center gap-2 md:gap-4">
+              <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Pappaquino:</span>
+              <a href="https://www.instagram.com/pappaquino/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@pappaquino</span>
+              </a>
+            </div>
+
+            <div className="hidden md:block w-px h-6 bg-white/30"></div>
+
+            <div className="flex items-center gap-2 md:gap-4">
+              <span className="font-black uppercase tracking-widest text-sm text-neutral-900 hidden lg:block">Willow GHZ:</span>
+              <a href="https://www.instagram.com/willow_ghz/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neutral-950 transition-colors flex items-center gap-2">
+                <InstagramIcon className="w-5 h-5 md:w-4 md:h-4" /> <span className="font-mono text-xs uppercase font-bold tracking-widest">@willow_ghz</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
       
       {/* Contacto Section */}
       <section id="contacto" className="py-32 bg-neutral-950 relative border-t border-white/5">
