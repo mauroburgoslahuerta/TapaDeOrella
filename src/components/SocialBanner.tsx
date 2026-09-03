@@ -10,7 +10,7 @@ interface SocialBannerProps {
 
 export function SocialBanner({ className }: SocialBannerProps) {
   return (
-    <div className={`w-full bg-brand-blue py-8 ${className ?? ""}`}>
+    <div className={`w-full bg-brand-blue py-4 ${className ?? ""}`}>
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-center items-center gap-x-8 md:gap-x-12 gap-y-6">
           {/* Band */}
