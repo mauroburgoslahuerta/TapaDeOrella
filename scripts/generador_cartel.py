@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Se asume que este script se ejecuta desde la carpeta "scripts" o la raíz del proyecto.
 script_dir = os.path.dirname(os.path.abspath(__file__))
 bg_path = os.path.join(script_dir, "fondo-vertical.jpg")
-out_path = os.path.join(script_dir, "..", "web", "public", "xira.jpg")
+out_path = os.path.join(script_dir, "..", "public", "xira.jpg")
 
 # --- LISTA DE FECHAS ---
 # Formato OBLIGATORIO: EVENTO (UBICACIÓN) ~ DD/MM/AAAA
@@ -15,6 +15,7 @@ fechas = [
     ("40 PRINCIPALES (PRAZA DA QUINTANA) ~ 13/05/2026", True),
     ("AVELINA FEST (ESTRADA) ~ 22/05/2026", True),
     ("ORBALLO CULTURAL (VIMIANZO) ~ 24/05/2026", True),
+    ("ARTEIXOVEN (ARTEIXO) ~ 20/06/2026", True),
     ("MUINHOS DA COSTEIRA (O PORRIÑO) ~ 03/07/2026", True),
     ("ASALTO AO CASTELO (VIMIANZO) ~ 04/07/2026", True),
     ("EXTRUGA (VERÍN) ~ 18/07/2026", True),
@@ -31,7 +32,6 @@ fechas = [
     ("AS REVENIDAS, CONCERTOS A BORDO ~ 13/09/2026", False),
     ("FESTA DAS DORES (LALÍN) ~ 18/09/2026", False),
     ("XURÉS SON (GROU) ~ 26/09/2026", False),
-    ("SALA MARDI GRAS (A CORUÑA) ~ 16/10/2026", False),
     ("RUADA DE CARBALLAL (SANTIAGO) ~ 07/11/2026", False)
 ]
 
