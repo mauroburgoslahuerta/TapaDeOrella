@@ -36,3 +36,7 @@ El proceso de actualizar fechas de conciertos no se hace a mano (por motivos de 
 - Nunca ejecutes cambios masivos sin preguntar.
 - Si Mauro propone una solución que generará deuda técnica (ej. crear un servidor MCP para conectar Canva), vetarla explicando los motivos técnicos de peso.
 - Ante dudas de formato oficial de un evento, búscalo en internet (ej. *Ruada de Carballal*) antes de inventar la sintaxis.
+
+## 4. Despliegue y Gestión de Dominios (DNS)
+- **Advertencia Crítica de Infraestructura:** El dominio `tapadeorella.com` está gestionado en *Profesional Hosting*. Tiene configurado un enrutamiento de correos crítico (filtros de reenvío en Gmail para `contratacions@tapadeorella.com`).
+- **Protocolo de Enlace a Vercel:** Cuando se despliegue la web oficial, **NUNCA** se deben cambiar los Nameservers (NS) completos del dominio. Hacerlo rompería el servidor de correo. El enlace a Vercel debe hacerse estricta y únicamente modificando los registros **A** y **CNAME** en el panel de Profesional Hosting, permitiendo que la gestión del email (Registros MX) siga intacta en el proveedor original.
